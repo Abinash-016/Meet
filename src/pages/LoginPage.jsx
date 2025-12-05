@@ -9,6 +9,15 @@ const LoginPage = () => {
   const [bio, setBio] = useState("");
   const [isDataSubmitted, setIsDataSubmitted] = useState(false);
 
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+
+    if (currState === "Sign up" && !isDataSubmitted) {
+      setIsDataSubmitted(true);
+      return;
+    }
+  };
+
   return (
     <div
       className="min-h-screen bg-cover bg-center flex items-center 
@@ -20,11 +29,21 @@ const LoginPage = () => {
       {/* ------- right ------- */}
 
       <form
+        onSubmit={onSubmitHandler}
         className="border-2 bg-white/8 text-white border-gray-500 p-6 flex 
   flex-col gap-6 rounded-lg shadow-lg"
       >
         <h2 className="font-medium text-2xl flex justify-between items-center">
           {currState}
+          {isDataSubmitted && (
+            <img
+              onClick={() => setIsDataSubmitted(false)}
+              src={assets.arrow_icon}
+              alt=""
+              className="w-5 cursor-pointer"
+            />
+          )}
+
           <img src={assets.arrow_icon} alt="" className="w-5 cursor-pointer" />
         </h2>
 
@@ -86,7 +105,32 @@ const LoginPage = () => {
           <p>Agree to the terms of use & privacy policy.</p>
         </div>
 
-        
+        <div className="flex flex-col gap-2">
+          {currState === "Sign up" ? (
+            <p className="text-sm text-gray-600">
+              Already have an account?{" "}
+              <span
+                onClick={() => {
+                  setCurrState("Login");
+                  setIsDataSubmitted(false);
+                }}
+                className="font-medium text-violet-500 cursor-pointer"
+              >
+                Login here
+              </span>
+            </p>
+          ) : (
+            <p className="text-sm text-gray-600">
+              Create an account{" "}
+              <span
+                onClick={() => setCurrState("Sign up")}
+                className="font-medium text-violet-500 cursor-pointer"
+              >
+                Click here
+              </span>
+            </p>
+          )}
+        </div>
       </form>
     </div>
   );
