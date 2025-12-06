@@ -1,0 +1,82 @@
+<<<<<<< HEAD
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+=======
+# Logs
+logs
+*.log
+>>>>>>> c0dd2f2d34d3c0163732cea5703e5237af638f32
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+<<<<<<< HEAD
+logs/
+*.log
+
+# Build outputs
+dist/
+build/
+
+# Coverage
+coverage/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Cache
+.cache/
+.vscode/
+*.swp
+*.swo
+
+# Temporary files
+tmp/
+temp/
+
+# Uploaded files
+uploads/
+public/uploads/
+
+# Firebase / Auth cache
+firebase-debug.log
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional lock file ignoring (choose your package manager)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# IDE folders
+.idea/
+=======
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+>>>>>>> c0dd2f2d34d3c0163732cea5703e5237af638f32
